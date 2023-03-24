@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Translator</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="text-gen">
+        <h1>Text Translator</h1>
+        <form class="text-gen-form", method="POST">
+          <select name="inputLanguage" class="form__dropdown" id="inputLanguage">
+            {% for inputLang in inputLangList %}
+            <option value="{{ inputLang }}">{{ inputLang }}</option>
+            {% endfor %}
+          </select>
+          <select name="inputLanguage" class="form__dropdown" id="inputLanguage">
+            {% for outputLang in outputLangList %}
+            <option value="{{ outputLang }}">{{ outputLang }}</option>
+            {% endfor %}
+          </select>
+          <br />
+          <br />
+          <input id="text-gen-input" class="text-gen-input" placeholder="Enter text to translate"></input>
+          <br />
+          <br />
+          <button id="text-gen-submit">Submit</button>
+          <br />
+          <p class="text-gen-output">{{ result }}</p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
